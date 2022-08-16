@@ -53,5 +53,3 @@ $_SESSION['status']="Data Not Inserted";
 	header("Location:postprop.php");	
 }
 }
-?>
-

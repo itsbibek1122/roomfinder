@@ -64,7 +64,7 @@ if (!isset($_SESSION['user'])) {
 			</nav>
 
 			<div class="container-fluid">
-				<h1 class="mt-4"> Registered Users</h1>
+				<h1 class="mt-4"> Messages</h1>
 			</div>
 			<br>
 			<div class="container mt-5 ml-5">
@@ -74,12 +74,12 @@ if (!isset($_SESSION['user'])) {
 						<table class="table-striped  table-bordered text">
 							<thead class="bg-dark text-white">
 								<tr>
-									<th class="py-3 text-white">id</th>
-									<th class="py-3 text-white">Username</th>
-									<th class="py-3 text-white">Email</th>
-									<th class="py-3 text-white">Mobile</th>
-									<th class="py-3 text-white">Operations</th>
-
+									<th class="py-3 text-white">ownername</th>
+									<th class="py-3 text-white">ownernumber</th>
+									<th class="py-3 text-white">property id</th>
+									<th class="py-3 text-white">name</th>
+									<th class="py-3 text-white">contact</th>
+									<th class="py-3 text-white">message</th>
 
 								</tr>
 							</thead>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['user'])) {
 
 								$dbcon = mysqli_connect("localhost", "root", "", "roomkhoji");
 
-								$selectquery = "select * from registration";
+								$selectquery = "select * from alert";
 								$query = mysqli_query($dbcon, $selectquery);
 								// $result = mysqli_fetch_array($query);
 
@@ -96,14 +96,12 @@ if (!isset($_SESSION['user'])) {
 								?>
 
 									<tr>
-										<td> <?php echo $result['id']; ?></td>
-										<td> <?php echo $result['username']; ?></td>
-										<td> <?php echo $result['email']; ?></td>
-										<td> <?php echo $result['mobile']; ?></td>
-										<td><a href="delete.php?id=<?php echo $result['id']; ?>">Delete</a></td>
-
-
-
+										<td> <?php echo $result['ownername']; ?></td>
+										<td> <?php echo $result['ownernumber']; ?></td>
+										<td> <?php echo $result['propertyid']; ?></td>
+										<td> <?php echo $result['name']; ?></td>
+										<td> <?php echo $result['contact']; ?></td>
+										<td> <?php echo $result['message']; ?></td>
 
 									</tr>
 
